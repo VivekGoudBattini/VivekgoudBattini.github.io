@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VivekGoud Battini — Customer Success &amp; Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #111827;
+    --ink-2: #1F2937;
+    --paper: #FFFFFF;
+    --paper-2: #F3F6FB;
+    --line: #E2E8F0;
+    --orange: #3b82f6;
+    --orange-dim: #2563EB;
+    --green: #3C8A5B;
+    --steel: #64748B;
+    --white: #FFFFFF;
+    --grad-start: #3b82f6;
+    --grad-end: #1D4ED8;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 0 32px; }
+
+  h1,h2,h3{
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+  }
+
+  .mono{
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  a{ color: inherit; }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height: 64px;
+  }
+  .brand{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700; font-size: 1.25rem;
+    text-decoration:none;
+    display:flex; align-items:center; gap:8px;
+  }
+  .brand .dot{ width:8px; height:8px; background:var(--orange); border-radius:1px; display:inline-block; }
+  nav ul{
+    list-style:none; display:flex; gap:28px;
+  }
+  nav a{
+    text-decoration:none; font-size:0.85rem; font-weight:600;
+    text-transform:uppercase; letter-spacing:0.06em;
+    color: var(--steel);
+    padding: 4px 2px; border-bottom: 2px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  nav a:hover, nav a:focus-visible{ color: var(--ink); border-color: var(--orange); }
+  nav a:focus-visible{ outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  @media (max-width: 640px){
+    nav ul{ gap:14px; }
+    nav a{ font-size:0.72rem; }
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    background: var(--paper-2);
+    color: var(--ink);
+    position: relative;
+    overflow:hidden;
+    padding: 96px 0 64px;
+  }
+  header.hero::before{
+    /* faint route line motif */
+    content:"";
+    position:absolute; left:0; right:0; bottom:0; height:2px;
+    background: repeating-linear-gradient(90deg, var(--orange) 0 24px, transparent 24px 44px);
+    opacity:0.55;
+  }
+  .eyebrow{
+    font-size:0.78rem; text-transform:uppercase; letter-spacing:0.18em;
+    color: var(--orange-dim); font-weight:600; margin-bottom:18px;
+  }
+  header.hero h1{
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    font-weight:800;
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+  header.hero h1 em{
+    font-style:normal; color:#4B5A72; font-weight:500;
+  }
+  .tagline{
+    max-width: 620px;
+    font-size: 1.08rem;
+    color:#3F4C5F;
+    margin-bottom: 40px;
+  }
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap: 10px 28px;
+    font-size:0.82rem; color:#4B5A72;
+    margin-bottom: 44px;
+  }
+  .hero-meta span{ display:flex; align-items:center; gap:8px; }
+  .hero-meta .k{ color: var(--steel); }
+
+  .manifest-row{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top:1px solid var(--line);
+  }
+  .manifest{
+    padding: 20px 0 4px;
+    border-right: 1px solid var(--line);
+  }
+  .manifest:last-child{ border-right:none; }
+  .manifest .num{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size: 2.1rem; font-weight:700; color: var(--ink);
+  }
+  .manifest .lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.66rem; text-transform:uppercase; letter-spacing:0.08em;
+    color: var(--steel); margin-top:4px;
+  }
+  @media (max-width: 700px){
+    .manifest-row{ grid-template-columns: repeat(2,1fr); }
+    .manifest:nth-child(2){ border-right:none; }
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding: 84px 0; }
+  .section-head{
+    display:flex; align-items:baseline; gap:16px;
+    margin-bottom: 40px;
+  }
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem; color: var(--orange-dim);
+    text-transform:uppercase; letter-spacing:0.1em;
+    border:1px solid var(--orange-dim); border-radius: 3px;
+    padding: 3px 8px;
+    white-space:nowrap;
+  }
+  .section-head h2{
+    font-size: 2.1rem; font-weight:700; color: var(--ink);
+  }
+
+  /* ---------- SUMMARY ---------- */
+  #summary{
+    border-bottom: 1px solid var(--line);
+  }
+  .summary-text{
+    max-width: 760px;
+    font-size: 1.05rem;
+    color:#3F4C5F;
+  }
+
+  /* ---------- EXPERIENCE / ROUTE ---------- */
+  #experience{ border-bottom:1px solid var(--line); }
+
+  .route{
+    position:relative;
+    padding-left: 40px;
+  }
+  .route::before{
+    content:"";
+    position:absolute; left:7px; top:8px; bottom:8px; width:2px;
+    background: repeating-linear-gradient(180deg, var(--orange) 0 10px, transparent 10px 18px);
+  }
+  .stop{
+    position:relative;
+    padding-bottom: 56px;
+  }
+  .stop:last-child{ padding-bottom:0; }
+  .stop::before{
+    content:"";
+    position:absolute; left:-40px; top:6px;
+    width:16px; height:16px; border-radius:50%;
+    background: var(--paper);
+    border: 3px solid var(--orange);
+  }
+  .stop.current::before{
+    background: var(--orange);
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.18);
+  }
+  .stop-head{
+    display:flex; flex-wrap:wrap; align-items:baseline;
+    gap: 6px 14px; margin-bottom:6px;
+  }
+  .stop-role{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:1.5rem; font-weight:700; color:var(--ink);
+  }
+  .stop-dates{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem; color: var(--steel);
+    text-transform:uppercase; letter-spacing:0.04em;
+  }
+  .stop-company{
+    font-size:0.95rem; font-weight:600; color: var(--orange-dim);
+    margin-bottom:14px;
+  }
+  .stop ul{
+    list-style:none;
+    display:flex; flex-direction:column; gap:9px;
+    max-width: 720px;
+  }
+  .stop li{
+    position:relative;
+    padding-left: 18px;
+    font-size:0.95rem; color:#3F4C5F;
+  }
+  .stop li::before{
+    content:"›";
+    position:absolute; left:0; top:0;
+    color: var(--orange); font-weight:700;
+  }
+
+  /* ---------- SKILLS ---------- */
+  #skills{ border-bottom:1px solid var(--line); }
+  .skill-groups{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 48px;
+  }
+  @media (max-width: 700px){ .skill-groups{ grid-template-columns: 1fr; } }
+
+  .skill-group .cat{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+    color: var(--steel);
+    margin-bottom: 12px;
+    padding-bottom:8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font-size:0.84rem; font-weight:500;
+    background: var(--white);
+    border:1px solid var(--line);
+    border-radius: 3px;
+    padding: 6px 12px;
+    color:#3F4C5F;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  #education{ border-bottom: 1px solid var(--line); }
+  .edu-list{
+    display:flex; flex-direction:column; gap:0;
+    max-width: 720px;
+  }
+  .edu-item{
+    display:flex; flex-wrap:wrap; align-items:baseline;
+    justify-content:space-between; gap:6px 16px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+  }
+  .edu-item:last-child{ border-bottom: 1px solid var(--line); }
+  .edu-degree{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:1.3rem; font-weight:700; color:var(--ink);
+    flex: 1 1 320px;
+  }
+  .edu-school{
+    font-size:0.9rem; color: var(--orange-dim); font-weight:600;
+    flex: 1 1 240px;
+  }
+  .edu-dates{
+    font-size:0.72rem; color: var(--steel);
+    text-transform:uppercase;
+  }
+
+  /* ---------- LANGUAGES ---------- */
+  #languages{ border-bottom: 1px solid var(--line); }
+  .lang-list{
+    display:flex; flex-direction:column; gap:0;
+    max-width: 720px;
+  }
+  .lang-item{
+    display:flex; flex-wrap:wrap; align-items:baseline;
+    justify-content:space-between; gap:6px 16px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+  }
+  .lang-item:last-child{ border-bottom: 1px solid var(--line); }
+  .lang-name{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:1.3rem; font-weight:700; color:var(--ink);
+    flex: 1 1 320px;
+  }
+  .lang-level{
+    font-size:0.72rem; color: var(--steel);
+    text-transform:uppercase; letter-spacing:0.04em;
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{
+    background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
+    color: #FFFFFF;
+    padding: 72px 0 40px;
+  }
+  footer h2{
+    font-size: 2.4rem; font-weight:700; color:#FFFFFF;
+    margin-bottom: 14px;
+  }
+  footer p{
+    color:#DCE8FE; max-width: 520px; margin-bottom: 32px;
+  }
+  .contact-links{
+    display:flex; flex-wrap:wrap; gap:14px;
+    margin-bottom: 56px;
+  }
+  .btn{
+    display:inline-block;
+    text-decoration:none;
+    font-size:0.88rem; font-weight:600;
+    padding: 13px 24px;
+    border-radius: 3px;
+  }
+  .btn-primary{
+    background: #FFFFFF; color: var(--grad-end);
+  }
+  .btn-primary:hover{ background:#EAF1FF; }
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.5); color: #FFFFFF;
+  }
+  .btn-ghost:hover{ border-color:#FFFFFF; background:rgba(255,255,255,0.08); }
+
+  .foot-bottom{
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px;
+    border-top:1px solid rgba(255,255,255,0.25);
+    padding-top: 24px;
+    font-size:0.76rem; color:#DCE8FE;
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  /* reveal on scroll */
+  .reveal{
+    opacity:0; transform: translateY(14px);
+    animation: rise 0.6s ease forwards;
+  }
+  @keyframes rise{ to{ opacity:1; transform:none; } }
+  .stop:nth-child(1){ animation-delay: .02s; }
+  .stop:nth-child(2){ animation-delay: .08s; }
+  .stop:nth-child(3){ animation-delay: .14s; }
+  .stop:nth-child(4){ animation-delay: .2s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dot"></span>VIVEKGOUD BATTINI</a>
+    <ul>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Customer Success · Client Consulting · Performance Marketing</div>
+    <h1>VivekGoud Battini<br><em>Sales &amp; Marketing Consultant</em></h1>
+    <p class="tagline">Ten years building customer relationships and commercial results — now focused on customer success advisory and Meta performance marketing, backed by an operations and logistics foundation that keeps execution sharp.</p>
+    <div class="hero-meta">
+      <span><span class="k">Based in</span> Berlin, Germany</span>
+      <span><span class="k">Email</span> vivekgoud0622@gmail.com</span>
+      <span><span class="k">Phone</span> +49 176 6131 2310</span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="manifest-row">
+      <div class="manifest">
+        <div class="num">£700K</div>
+        <div class="lbl">Quarterly revenue via Meta ads</div>
+      </div>
+      <div class="manifest">
+        <div class="num">10+</div>
+        <div class="lbl">Years cross-functional experience</div>
+      </div>
+      <div class="manifest">
+        <div class="num">4</div>
+        <div class="lbl">Roles: fleet → warehouse → consulting</div>
+      </div>
+      <div class="manifest">
+        <div class="num">B2B/B2C</div>
+        <div class="lbl">Client portfolio managed</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">01</span>
+      <h2>Professional Summary</h2>
+    </div>
+    <p class="summary-text">
+      Versatile and commercially focused professional with 10+ years of cross-functional experience spanning operations, logistics, supply chain, warehouse management, sales, customer advisory, and digital marketing. Progressed from managing day-to-day operational workflows and fleet logistics to leading warehouse and inventory activities, and ultimately to advising B2B and B2C clients on sales and Meta performance marketing. Delivered approximately £700K in quarterly revenue through Meta advertising, with hands-on responsibility for ROAS, revenue performance, client relationships, lead generation, upselling, and campaign optimization. Strong track record of working with diverse stakeholders, coordinating teams and resources, improving operational processes, and translating data into practical business decisions. Combines operational expertise with commercial awareness and client-facing consulting skills to drive efficiency, customer value, and sustainable business growth.
+    </p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">02</span>
+      <h2>Experience</h2>
+    </div>
+
+    <div class="route">
+
+      <div class="stop current reveal">
+        <div class="stop-head">
+          <span class="stop-role">Sales &amp; Marketing Consultant / Customer Advisor</span>
+          <span class="stop-dates">Nov 2022 — Present</span>
+        </div>
+        <div class="stop-company">Concentrix</div>
+        <ul>
+          <li>Managed a diverse portfolio of B2B and B2C clients, including e-commerce businesses, single-owner businesses, and marketing agencies, providing consultative sales and digital marketing support.</li>
+          <li>Generated approximately £700K in quarterly revenue through Meta advertising and performance marketing activities, supporting clients across different industries and business models.</li>
+          <li>Advised clients on Meta advertising strategies, campaign performance, audience targeting, and optimization to improve business outcomes.</li>
+          <li>Monitored and analysed ROAS, advertising spend, revenue, conversion performance, and campaign metrics to evaluate performance and identify opportunities for growth.</li>
+          <li>Managed client relationships from initial consultation through ongoing campaign support, understanding business objectives and recommending appropriate solutions.</li>
+          <li>Identified opportunities for upselling and cross-selling based on client requirements, advertising performance, and business growth potential.</li>
+          <li>Generated and qualified leads while supporting clients with sales and marketing strategies designed to improve customer acquisition and revenue.</li>
+          <li>Worked closely with marketing agencies and individual business owners, adapting recommendations to different levels of marketing maturity, budgets, and commercial objectives.</li>
+          <li>Handled customer queries, performance concerns, and service-related issues, providing timely solutions and maintaining strong client relationships.</li>
+          <li>Used performance data and client feedback to identify campaign optimization opportunities and support continuous improvement in advertising effectiveness.</li>
+        </ul>
+      </div>
+
+      <div class="stop reveal">
+        <div class="stop-head">
+          <span class="stop-role">Warehouse Lead / Operations Supervisor</span>
+          <span class="stop-dates">Nov 2021 — Oct 2022</span>
+        </div>
+        <div class="stop-company">Gorillas GmbH</div>
+        <ul>
+          <li>Led day-to-day warehouse operations, ensuring smooth inbound and outbound processes and efficient order fulfilment.</li>
+          <li>Managed inventory checks and stock levels, ensuring accurate availability of SKUs and timely replenishment.</li>
+          <li>Conducted quality control checks to ensure products met operational and customer quality standards.</li>
+          <li>Coordinated with inbound operations to determine the required quantity of SKUs based on current and expected customer orders.</li>
+          <li>Updated and maintained SKU information and inventory records to support accurate stock management.</li>
+          <li>Allocated riders to shifts and coordinated workforce availability based on operational requirements and delivery demand.</li>
+          <li>Monitored delivery performance and customer feedback, identifying operational issues and supporting improvements in service quality.</li>
+          <li>Trained and supported new colleagues, helping them understand warehouse processes, operational standards, and daily workflows.</li>
+          <li>Collaborated with cross-functional teams to resolve operational issues and maintain efficient warehouse performance.</li>
+        </ul>
+      </div>
+
+      <div class="stop reveal">
+        <div class="stop-head">
+          <span class="stop-role">Logistics Operations Associate</span>
+          <span class="stop-dates">Apr 2020 — Sep 2021</span>
+        </div>
+        <div class="stop-company">TIER Mobility GmbH</div>
+        <ul>
+          <li>Managed fleet and logistics operations, supporting the efficient movement and availability of vehicles across operational areas.</li>
+          <li>Coordinated inbound and outbound vehicle movements to maintain fleet availability and meet operational requirements.</li>
+          <li>Monitored vehicle movements and supported the day-to-day management of fleet logistics activities.</li>
+          <li>Coordinated with operational teams to ensure vehicles were available where and when required.</li>
+          <li>Identified and addressed operational issues affecting fleet availability and logistics workflows.</li>
+          <li>Maintained operational records and monitored logistics activities to support efficient fleet management.</li>
+          <li>Collaborated with internal teams and external partners to coordinate vehicle movements and resolve operational challenges.</li>
+        </ul>
+      </div>
+
+      <div class="stop reveal">
+        <div class="stop-head">
+          <span class="stop-role">Operations Specialist</span>
+          <span class="stop-dates">Jun 2016 — Sep 2019</span>
+        </div>
+        <div class="stop-company">Street Ride Technologies Pvt. Ltd.</div>
+        <ul>
+          <li>Oversaw daily operational workflows, addressed escalations, and supported the development of operational guidelines.</li>
+          <li>Analysed operational gaps and developed recommendations to improve processes and efficiency.</li>
+          <li>Prepared and analysed key operational reports to identify trends and optimization opportunities.</li>
+          <li>Coordinated with internal stakeholders and external partners to ensure smooth operational execution.</li>
+          <li>Improved reporting processes and templates by incorporating feedback from colleagues, management, and support teams.</li>
+          <li>Facilitated communication between departments to maintain alignment and support operational objectives.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">03</span>
+      <h2>Skills</h2>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <div class="cat">Sales &amp; Commercial</div>
+        <div class="chips">
+          <span class="chip">B2B/B2C Sales</span>
+          <span class="chip">Account Management</span>
+          <span class="chip">Lead Generation</span>
+          <span class="chip">Upselling &amp; Cross-Selling</span>
+          <span class="chip">Revenue Growth</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="cat">Marketing &amp; Analytics</div>
+        <div class="chips">
+          <span class="chip">Meta Advertising</span>
+          <span class="chip">Performance Marketing</span>
+          <span class="chip">Campaign Optimization</span>
+          <span class="chip">ROAS Analysis</span>
+          <span class="chip">Digital Marketing</span>
+          <span class="chip">Data Interpretation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="cat">Tools</div>
+        <div class="chips">
+          <span class="chip">Advanced Excel</span>
+          <span class="chip">CRM</span>
+          <span class="chip">Tableau</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Microsoft Office</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="cat">Professional</div>
+        <div class="chips">
+          <span class="chip">Client Relationship Mgmt</span>
+          <span class="chip">Stakeholder Management</span>
+          <span class="chip">Communication</span>
+          <span class="chip">Problem Solving</span>
+          <span class="chip">Analytical Thinking</span>
+          <span class="chip">Team Leadership</span>
+          <span class="chip">Inventory &amp; Quality Control</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">04</span>
+      <h2>Education</h2>
+    </div>
+    <div class="edu-list">
+      <div class="edu-item">
+        <div class="edu-degree">Master of Science in Engineering Management</div>
+        <div class="edu-school">Arden University</div>
+        <div class="edu-dates mono">Graduated Jan 2022</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Bachelor of Technology and Science</div>
+        <div class="edu-school">Kakatiya Institute of Technology &amp; Sciences</div>
+        <div class="edu-dates mono">Graduated Jun 2016</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="languages">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">05</span>
+      <h2>Languages</h2>
+    </div>
+    <div class="lang-list">
+      <div class="lang-item">
+        <div class="lang-name">German</div>
+        <div class="lang-level mono">A2</div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-name">English</div>
+        <div class="lang-level mono">Fluent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk.</h2>
+    <p>Open to sales, marketing consulting, and operations leadership roles. Reach out directly — happy to walk through the details behind any of the results above.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:vivekgoud0622@gmail.com">Send Email</a>
+      <a class="btn btn-ghost" href="tel:+4917661312310">Call</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/vivekgoud0622/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 VivekGoud Battini</span>
+      <span>Berlin, Germany · Customer Success &amp; Marketing</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
