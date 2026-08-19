@@ -157,6 +157,38 @@
     .manifest:nth-child(2){ border-right:none; }
   }
 
+  /* ---------- ACHIEVEMENTS ---------- */
+  #achievements{
+    background: var(--paper-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .ach-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 32px;
+  }
+  @media (max-width: 700px){
+    .ach-grid{ grid-template-columns: 1fr; }
+  }
+  .ach-item{
+    display:flex; align-items:flex-start; gap:12px;
+    background: var(--white);
+    border:1px solid var(--line);
+    border-radius: 4px;
+    padding: 16px 18px;
+    font-size:0.95rem;
+    color:#3F4C5F;
+  }
+  .ach-item .mark{
+    flex:none;
+    width:26px; height:26px; border-radius:50%;
+    background: var(--orange);
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem; font-weight:600;
+  }
+
   /* ---------- SECTION SHELL ---------- */
   section{ padding: 84px 0; }
   .section-head{
@@ -396,7 +428,7 @@
 <header class="hero" id="top">
   <div class="wrap">
     <div class="eyebrow">Customer Success · Client Consulting · Performance Marketing</div>
-    <h1>VivekGoud Battini<br><em>Sales &amp; Marketing Consultant</em></h1>
+    <h1>VivekGoud Battini<br><em>Customer Success | Revenue Growth | Performance Marketing</em></h1>
     <p class="tagline">Ten years building customer relationships and commercial results — now focused on customer success advisory and Meta performance marketing, backed by an operations and logistics foundation that keeps execution sharp.</p>
     <div class="hero-meta">
       <span><span class="k">Based in</span> Berlin, Germany</span>
