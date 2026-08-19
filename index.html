@@ -132,6 +132,8 @@
   }
   .hero-meta span{ display:flex; align-items:center; gap:8px; }
   .hero-meta .k{ color: var(--steel); }
+  .hero-meta a{ text-decoration:none; color:#4B5A72; }
+  .hero-meta a:hover{ color: var(--orange-dim); }
 
   .manifest-row{
     display:grid;
@@ -155,38 +157,6 @@
   @media (max-width: 700px){
     .manifest-row{ grid-template-columns: repeat(2,1fr); }
     .manifest:nth-child(2){ border-right:none; }
-  }
-
-  /* ---------- ACHIEVEMENTS ---------- */
-  #achievements{
-    background: var(--paper-2);
-    border-bottom: 1px solid var(--line);
-  }
-  .ach-grid{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px 32px;
-  }
-  @media (max-width: 700px){
-    .ach-grid{ grid-template-columns: 1fr; }
-  }
-  .ach-item{
-    display:flex; align-items:flex-start; gap:12px;
-    background: var(--white);
-    border:1px solid var(--line);
-    border-radius: 4px;
-    padding: 16px 18px;
-    font-size:0.95rem;
-    color:#3F4C5F;
-  }
-  .ach-item .mark{
-    flex:none;
-    width:26px; height:26px; border-radius:50%;
-    background: var(--orange);
-    color:#fff;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.78rem; font-weight:600;
   }
 
   /* ---------- SECTION SHELL ---------- */
@@ -429,11 +399,11 @@
   <div class="wrap">
     <div class="eyebrow">Customer Success · Client Consulting · Performance Marketing</div>
     <h1>VivekGoud Battini<br><em>Customer Success | Revenue Growth | Performance Marketing</em></h1>
-    <p class="tagline">Commercial growth professional with 10 years of experience building customer relationships and driving business growth through customer success advisory, Meta performance marketing, and data-driven decision-making. Backed by a strong foundation in operations and logistics, I bring a practical, execution-focused approach to solving business challenges.</p>
     <div class="hero-meta">
       <span><span class="k">Based in</span> Berlin, Germany</span>
       <span><span class="k">Email</span> vivekgoud0622@gmail.com</span>
       <span><span class="k">Phone</span> +49 176 6131 2310</span>
+      <span><span class="k">Web</span> <a href="https://vivekgoudbattini.github.io" target="_blank" rel="noopener">vivekgoudbattini.github.io</a></span>
     </div>
   </div>
   <div class="wrap">
@@ -444,7 +414,7 @@
       </div>
       <div class="manifest">
         <div class="num">10+</div>
-        <div class="lbl">Years cross-functional experience</div>
+        <div class="lbl">Years experience</div>
       </div>
       <div class="manifest">
         <div class="num">4</div>
@@ -465,7 +435,7 @@
       <h2>Professional Summary</h2>
     </div>
     <p class="summary-text">
-      Versatile and commercially focused professional with 10+ years of cross-functional experience spanning operations, logistics, supply chain, warehouse management, sales, customer advisory, and digital marketing. Progressed from managing day-to-day operational workflows and fleet logistics to leading warehouse and inventory activities, and ultimately to advising B2B and B2C clients on sales and Meta performance marketing. Delivered approximately £700K in quarterly revenue through Meta advertising, with hands-on responsibility for ROAS, revenue performance, client relationships, lead generation, upselling, and campaign optimization. Strong track record of working with diverse stakeholders, coordinating teams and resources, improving operational processes, and translating data into practical business decisions. Combines operational expertise with commercial awareness and client-facing consulting skills to drive efficiency, customer value, and sustainable business growth.
+      Commercial growth professional with 10 years of experience building customer relationships and driving business growth through customer success advisory, Meta performance marketing, and data-driven decision-making. Backed by a strong foundation in operations and logistics, I bring a practical, execution-focused approach to solving business challenges.
     </p>
   </div>
 </section>
@@ -486,16 +456,12 @@
         </div>
         <div class="stop-company">Concentrix</div>
         <ul>
-          <li>Managed a diverse portfolio of B2B and B2C clients, including e-commerce businesses, single-owner businesses, and marketing agencies, providing consultative sales and digital marketing support.</li>
-          <li>Generated approximately £700K in quarterly revenue through Meta advertising and performance marketing activities, supporting clients across different industries and business models.</li>
-          <li>Advised clients on Meta advertising strategies, campaign performance, audience targeting, and optimization to improve business outcomes.</li>
-          <li>Monitored and analysed ROAS, advertising spend, revenue, conversion performance, and campaign metrics to evaluate performance and identify opportunities for growth.</li>
-          <li>Managed client relationships from initial consultation through ongoing campaign support, understanding business objectives and recommending appropriate solutions.</li>
-          <li>Identified opportunities for upselling and cross-selling based on client requirements, advertising performance, and business growth potential.</li>
-          <li>Generated and qualified leads while supporting clients with sales and marketing strategies designed to improve customer acquisition and revenue.</li>
-          <li>Worked closely with marketing agencies and individual business owners, adapting recommendations to different levels of marketing maturity, budgets, and commercial objectives.</li>
-          <li>Handled customer queries, performance concerns, and service-related issues, providing timely solutions and maintaining strong client relationships.</li>
-          <li>Used performance data and client feedback to identify campaign optimization opportunities and support continuous improvement in advertising effectiveness.</li>
+          <li>Managed a diverse portfolio of B2B and B2C clients, including e-commerce businesses, entrepreneurs, and marketing agencies, providing consultative sales and digital marketing support.</li>
+          <li>Generated approximately £700K in quarterly revenue through Meta advertising and performance marketing across multiple industries and business models.</li>
+          <li>Advised clients on campaign strategy, audience targeting, budget allocation, and optimization, using performance data to improve commercial outcomes.</li>
+          <li>Analysed ROAS, advertising spend, revenue, conversions, and campaign performance to identify growth opportunities and guide optimization decisions.</li>
+          <li>Managed the full client lifecycle, from initial consultation and solution recommendation through ongoing campaign support, issue resolution, and relationship management.</li>
+          <li>Identified and converted upselling and cross-selling opportunities by aligning advertising performance and client business needs with relevant solutions.</li>
         </ul>
       </div>
 
@@ -506,15 +472,12 @@
         </div>
         <div class="stop-company">Gorillas GmbH</div>
         <ul>
-          <li>Led day-to-day warehouse operations, ensuring smooth inbound and outbound processes and efficient order fulfilment.</li>
-          <li>Managed inventory checks and stock levels, ensuring accurate availability of SKUs and timely replenishment.</li>
-          <li>Conducted quality control checks to ensure products met operational and customer quality standards.</li>
-          <li>Coordinated with inbound operations to determine the required quantity of SKUs based on current and expected customer orders.</li>
-          <li>Updated and maintained SKU information and inventory records to support accurate stock management.</li>
-          <li>Allocated riders to shifts and coordinated workforce availability based on operational requirements and delivery demand.</li>
-          <li>Monitored delivery performance and customer feedback, identifying operational issues and supporting improvements in service quality.</li>
-          <li>Trained and supported new colleagues, helping them understand warehouse processes, operational standards, and daily workflows.</li>
-          <li>Collaborated with cross-functional teams to resolve operational issues and maintain efficient warehouse performance.</li>
+          <li>Led day-to-day warehouse operations for 200+ orders daily, overseeing inbound, outbound, inventory, and order fulfilment activities.</li>
+          <li>Managed inventory across 700+ SKUs, maintaining stock availability and coordinating replenishment based on customer demand and operational requirements.</li>
+          <li>Coordinated a workforce of 50 team members and 30+ delivery riders, allocating shifts and resources according to daily delivery demand.</li>
+          <li>Monitored inventory and fulfilment performance, maintaining 90%+ inventory accuracy and 90%+ on-time fulfilment.</li>
+          <li>Coordinated with inbound and cross-functional teams to resolve operational issues, improve stock availability, and maintain smooth fulfilment workflows.</li>
+          <li>Trained and supported 35 new employees, ensuring understanding of warehouse processes, quality standards, and daily operating procedures.</li>
         </ul>
       </div>
 
@@ -525,13 +488,10 @@
         </div>
         <div class="stop-company">TIER Mobility GmbH</div>
         <ul>
-          <li>Managed fleet and logistics operations, supporting the efficient movement and availability of vehicles across operational areas.</li>
-          <li>Coordinated inbound and outbound vehicle movements to maintain fleet availability and meet operational requirements.</li>
-          <li>Monitored vehicle movements and supported the day-to-day management of fleet logistics activities.</li>
-          <li>Coordinated with operational teams to ensure vehicles were available where and when required.</li>
-          <li>Identified and addressed operational issues affecting fleet availability and logistics workflows.</li>
-          <li>Maintained operational records and monitored logistics activities to support efficient fleet management.</li>
-          <li>Collaborated with internal teams and external partners to coordinate vehicle movements and resolve operational challenges.</li>
+          <li>Managed day-to-day fleet and logistics operations, coordinating vehicle availability and movement across operational areas.</li>
+          <li>Coordinated inbound and outbound vehicle movements to meet operational and delivery requirements.</li>
+          <li>Monitored fleet activities, maintained operational records, and supported efficient resource allocation.</li>
+          <li>Collaborated with internal teams and external partners to resolve logistics issues and improve operational workflows.</li>
         </ul>
       </div>
 
@@ -542,12 +502,10 @@
         </div>
         <div class="stop-company">Street Ride Technologies Pvt. Ltd.</div>
         <ul>
-          <li>Oversaw daily operational workflows, addressed escalations, and supported the development of operational guidelines.</li>
-          <li>Analysed operational gaps and developed recommendations to improve processes and efficiency.</li>
-          <li>Prepared and analysed key operational reports to identify trends and optimization opportunities.</li>
-          <li>Coordinated with internal stakeholders and external partners to ensure smooth operational execution.</li>
-          <li>Improved reporting processes and templates by incorporating feedback from colleagues, management, and support teams.</li>
-          <li>Facilitated communication between departments to maintain alignment and support operational objectives.</li>
+          <li>Oversaw daily operations, handled escalations, and supported the development of operational guidelines.</li>
+          <li>Analysed process gaps and recommended improvements to increase operational efficiency.</li>
+          <li>Prepared and analysed operational reports to identify trends and optimization opportunities.</li>
+          <li>Coordinated with internal teams and external partners to ensure smooth execution and cross-functional alignment.</li>
         </ul>
       </div>
 
@@ -657,6 +615,7 @@
       <a class="btn btn-primary" href="mailto:vivekgoud0622@gmail.com">Send Email</a>
       <a class="btn btn-ghost" href="tel:+4917661312310">Call</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/vivekgoud0622/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://vivekgoudbattini.github.io" target="_blank" rel="noopener">Portfolio</a>
     </div>
     <div class="foot-bottom">
       <span>© 2026 VivekGoud Battini</span>
